@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::resource('/home', 'HomeController');
 
-Route::resource('/transaction', 'TransactionController');
+Route::resource('/transaction', 'TransactionController',
+	['only'=>['index', 'store']]
+	);
