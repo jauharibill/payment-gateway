@@ -46,8 +46,8 @@ class TransactionController extends Controller
     {
         //
         $validator = Validator::make($request->all(), [
-                'from' => 'required|integer',
-                'to' => 'required|integer',
+                'from' => 'required',
+                'to' => 'required',
                 'value' => 'required',
             ]);
         if($validator->passes())
