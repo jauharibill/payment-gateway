@@ -32,8 +32,14 @@ return [
     | Defaults to 1 hour
     |
     */
+   
+    /**
+     * ttl changed by bill 
+     * its changed from 1 hour to 2 days ttl
+     * author : bill tanthowi jauhari
+     */
 
-    'ttl' => 60,
+    'ttl' => 3840,
 
     /*
     |--------------------------------------------------------------------------
