@@ -8,8 +8,12 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
-                    {{$token}}
+                    <div class="col-md-2 pull-left">
+                        <strong>Your Token :</strong>
+                    </div>
+                    <div class="col-md-10 pull-right" style="overflow-x: scroll;">
+                    {{$tokens->token}}
+                    </div>
                 </div>
             </div>
         </div>

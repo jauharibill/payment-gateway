@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use JWTAuth;
+use App\User;
+use App\Token;
 
 class HomeController extends Controller
 {
@@ -15,7 +17,6 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('jwt.auth');
     }
 
     /**
@@ -23,8 +24,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $user)
     {
-        return view('home');
+        $tokens = Token::where('user_id', auth()->user()->id)->first();
+        return view('home', compact('tokens'));
     }
 }
