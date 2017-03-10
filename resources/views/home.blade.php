@@ -9,6 +9,7 @@
 
                 <div class="panel-body">
                     You are logged in!
+                    {{$token}}
                 </div>
             </div>
         </div>
