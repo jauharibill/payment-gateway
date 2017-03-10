@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Transaction;
 use Illuminate\Http\Request;
-use Transaction;
+use Validator;
 
 
 class TransactionController extends Controller
@@ -23,7 +23,7 @@ class TransactionController extends Controller
     {
         //
         $transaction = Transaction::get();
-        return response()->json(compact('transaction'))
+        return response()->json(compact('transaction'));
     }
 
     /**
@@ -45,7 +45,7 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         //
-        $validator = Validator::make($request->all(),[
+        $validator = Validator::make($request->all(), [
                 'from' => 'required|integer',
                 'to' => 'required|integer',
                 'value' => 'required',

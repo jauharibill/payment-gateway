@@ -19,4 +19,4 @@ Auth::routes();
 
 Route::resource('/home', 'HomeController');
 
-Route::resource('/home/transaction', 'TransactionController');
+Route::resource('/transaction', 'TransactionController');
