@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Transaction;
 use Illuminate\Http\Request;
+use Transaction;
+
 
 class TransactionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('jwt.auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +22,8 @@ class TransactionController extends Controller
     public function index()
     {
         //
+        $transaction = Transaction::get();
+        return response()->json(compact('transaction'))
     }
 
     /**
@@ -36,6 +45,18 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         //
+        $validator = Validator::make($request->all(),[
+                'from' => 'required|integer',
+                'to' => 'required|integer',
+                'value' => 'required',
+            ]);
+        if($validator->passes())
+        {
+            Transaction::create($request->all());    
+            return response()->json('success');
+        }
+        return response()->json('failed');
+        
     }
 
     /**
