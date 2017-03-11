@@ -42,9 +42,9 @@
                     @endif
                     <div class="col-md-12">
                         <div class="col-md-2 pull-right">
-                            <button class="btn btn-primary" style="margin-top:10px;">
+                            <a href="{{url('apps/create')}}" class="btn btn-primary" style="margin-top:10px;">
                                 <span class="fa fa-pencil"></span>Create
-                            </button>
+                            </a>
                         </div>
                     </div>
 

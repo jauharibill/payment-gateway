@@ -24,5 +24,5 @@ Route::resource('/transaction', 'TransactionController',
 	);
 
 Route::resource('/apps', 'AplicationController', [
-	'only' => ['index', 'store']
+	'only' => ['create', 'store']
 	]);

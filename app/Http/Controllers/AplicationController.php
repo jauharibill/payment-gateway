@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Aplication;
 use Illuminate\Http\Request;
+use Validator;
 
 class AplicationController extends Controller
 {
@@ -25,7 +26,7 @@ class AplicationController extends Controller
     public function create()
     {
         //
-        return $this->view('create');
+        return view('create');
     }
 
     /**
@@ -41,12 +42,9 @@ class AplicationController extends Controller
             'name' => 'required|string',
             'description' => 'required|string',
             'user_id' => 'required|integer',
-            ]);
-        if ($validator->passes()) {
+            ])->validate();
             Aplication::create($request->all());
-            return response()->json('success');
-        }
-        return response()->json('failed');
+            return redirect()->back();
     }
 
     /**
