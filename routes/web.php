@@ -22,3 +22,7 @@ Route::resource('/home', 'HomeController');
 Route::resource('/transaction', 'TransactionController',
 	['only'=>['index', 'store']]
 	);
+
+Route::resource('/apps', 'AplicationController', [
+	'only' => ['index', 'store']
+	]);

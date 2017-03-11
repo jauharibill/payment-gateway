@@ -8,12 +8,46 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    <div class="col-md-2 pull-left">
-                        <strong>Your Token :</strong>
+                    <div class="col-md-12">
+                        <div class="col-md-2 pull-left">
+                            <strong>Your Token :</strong>
+                        </div>
+                        <div class="col-md-10 pull-right" style="overflow-x: scroll;">
+                        {{$tokens->token}}
+                        </div>
+                    </div> 
+                    @if(auth()->user()->apps)
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <tr>
+                                <th>#</th>
+                                <th>Purpose</th>
+                                <th>Method</th>
+                                <th>Url</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><strong>Get Transaction</strong></td>
+                                <td>GET</td>
+                                <td>//host/transaction?token=[yourtoken]</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><strong>Store Transaction</strong></td>
+                                <td>POST</td>
+                                <td>//host/transaction?token=[yourtoken]</td>
+                            </tr>
+                        </table>
                     </div>
-                    <div class="col-md-10 pull-right" style="overflow-x: scroll;">
-                    {{$tokens->token}}
+                    @endif
+                    <div class="col-md-12">
+                        <div class="col-md-2 pull-right">
+                            <button class="btn btn-primary" style="margin-top:10px;">
+                                <span class="fa fa-pencil"></span>Create
+                            </button>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

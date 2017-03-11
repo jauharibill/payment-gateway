@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Token::class);
     }
+
+    public function apps()
+    {
+        return $this->hasOne(Aplication::class);
+    }
 }
