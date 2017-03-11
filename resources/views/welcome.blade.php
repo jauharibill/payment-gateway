@@ -5,11 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Payment Gateway</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
         <!-- Styles -->
         <style>
             html, body {
@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Payment Gateway Hackathon BNI
+                    Payment Gateway
                 </div>
 
                 <div class="links">
